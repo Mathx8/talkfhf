@@ -16,7 +16,7 @@ const Tabela = ({ titulo, times }) => {
                 </Cabecalho>
                 <tbody>
                     {times.map((time, index) => (
-                        <Linha key={time.id || index} posicao={index + 1}>
+                        <Linha key={time.id || index} $posicao={index + 1}>
                             <Celula>{index + 1}</Celula>
                             <Celula><strong>{time.nome}</strong></Celula>
                             {['jogos', 'vitorias', 'empates', 'derrotas', 'gols_marcados', 'gols_sofridos', 'saldo_de_gols', 'pontos'].map((stat) => (

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, ContainerEstatisticas, TituloContainer, CategoriaBox, Titulo, Lista, JogadorItem, Nome, Valor } from "./styles";
 
 import api from "../../API/api";
-import { PontinhosAnimados } from "../TelaCarregamento/styles";
+import LoadingPequeno from "../TelaCarregamentoPequeno";
 import gol from "../../Image/gol.png";
 import assistencia from "../../Image/assistencia.png";
 import cleansheet from "../../Image/cleansheet.png";
@@ -28,9 +28,9 @@ const RankingJogadores = ({ idCompeticao }) => {
         dados?.length ? (
             <Lista>
                 {dados.map((jogador, index) => (
-                    <JogadorItem key={jogador.id} destaque={index}>
-                        <Nome destaque={index}>{jogador.nome}</Nome>
-                        <Valor tipo={tipo} destaque={index}>
+                    <JogadorItem key={jogador.id} $destaque={index}>
+                        <Nome $destaque={index}>{jogador.nome}</Nome>
+                        <Valor $tipo={tipo} $destaque={index}>
                             {jogador[tipo]}
                         </Valor>
                     </JogadorItem>
@@ -40,7 +40,7 @@ const RankingJogadores = ({ idCompeticao }) => {
             <p style={{ color: "#fff", textAlign: "center", marginTop: 10 }}>Sem dados</p>
         );
 
-    if (!ranking) return <h2>Buscando as Estatísticas<PontinhosAnimados>...</PontinhosAnimados></h2>
+    if (!ranking) return <> <TituloContainer>Estatísticas</TituloContainer><LoadingPequeno /> </>
 
     return (
         <Container>

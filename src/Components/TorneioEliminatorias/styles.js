@@ -62,12 +62,12 @@ export const TimeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: ${({ vencedor, theme }) => (vencedor ? "#facc15" : theme.header)};
-  color: ${({ vencedor, theme }) => (vencedor ? theme.text2 : theme.text)};
+  background: ${({ $vencedor, theme }) => ($vencedor ? "#facc15" : theme.header)};
+  color: ${({ $vencedor, theme }) => ($vencedor ? theme.text2 : theme.text)};
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
   margin-bottom: 0.4rem;
-  font-weight: ${({ vencedor }) => (vencedor ? "bold" : "normal")};
+  font-weight: ${({ $vencedor }) => ($vencedor ? "bold" : "normal")};
   transition: background 0.3s ease;
 `;
 
@@ -109,10 +109,10 @@ export const FinalContainer = styled.div`
 export const FinalTimeContainer = styled.div`
   display: flex;
   align-items: center;
-  background: ${({ vencedor, theme }) => (vencedor ? "#facc15" : theme.header)};
-  color: ${({ vencedor, theme }) => (vencedor ? theme.text2 : theme.text)};
+  background: ${({ $vencedor, theme }) => ($vencedor ? "#facc15" : theme.header)};
+  color: ${({ $vencedor, theme }) => ($vencedor ? theme.text2 : theme.text)};
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
-  font-weight: ${({ vencedor }) => (vencedor ? "bold" : "normal")};
+  font-weight: ${({ $vencedor }) => ($vencedor ? "bold" : "normal")};
   transition: background 0.3s ease;
 `;

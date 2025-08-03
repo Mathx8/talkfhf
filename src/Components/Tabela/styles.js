@@ -42,7 +42,7 @@ export const Linha = styled.tr`
     background-color: ${({ theme }) => theme.footer};
   }
 
-  ${props => props.posicao <= 2 && `
+  ${({ $posicao }) => $posicao <= 2 && `
     border-left: 3px solid #e63946;
     td {
       font-weight: bold;

@@ -4,6 +4,7 @@ import usePartidas from "../../API/usePartidas";
 import useTimes from "../../API/useTimes"
 import { useTheme } from "../../ThemeContext";
 import Loading from "../../Components/TelaCarregamento";
+import escudo from "../../Image/escudo.png"
 
 const Torneio = () => {
     const { times } = useTimes();
@@ -225,8 +226,8 @@ const Torneio = () => {
 
     const renderPartidas = (partidas) =>
         partidas.map((partida) => {
-            const logoTime1 = times.find((t) => t.nome === partida.time1)?.logo || "";
-            const logoTime2 = times.find((t) => t.nome === partida.time2)?.logo || "";
+            const logoTime1 = times.find((t) => t.nome === partida.time1)?.logo || escudo;
+            const logoTime2 = times.find((t) => t.nome === partida.time2)?.logo || escudo;
 
             const golsCasa = Number(partida.gols_casa);
             const golsFora = Number(partida.gols_fora);
@@ -238,24 +239,24 @@ const Torneio = () => {
                 <Partida key={partida.id} ref={(el) => (partidaRefs.current[partida.id] = el)}>
                     <BoxPlacar>
                         <LinhaResultado
-                            vencedor={casaVenceu}
-                            hovered={timeHover === partida.time1}
+                            $vencedor={casaVenceu}
+                            $hovered={timeHover === partida.time1}
                             onMouseEnter={() => setTimeHover(partida.time1)}
                             onMouseLeave={() => setTimeHover(null)}
                         >
                             <LogoTime src={logoTime1} alt="" />
-                            <NomeTime vencedor={casaVenceu}>{partida.time1}</NomeTime>
-                            <Placar vencedor={casaVenceu}>{partida.gols_casa}</Placar>
+                            <NomeTime $vencedor={casaVenceu}>{partida.time1}</NomeTime>
+                            <Placar $vencedor={casaVenceu}>{partida.gols_casa}</Placar>
                         </LinhaResultado>
                         <LinhaResultado
-                            vencedor={foraVenceu}
-                            hovered={timeHover === partida.time2}
+                            $encedor={foraVenceu}
+                            $hovered={timeHover === partida.time2}
                             onMouseEnter={() => setTimeHover(partida.time2)}
                             onMouseLeave={() => setTimeHover(null)}
                         >
                             <LogoTime src={logoTime2} alt="" />
-                            <NomeTime vencedor={foraVenceu}>{partida.time2}</NomeTime>
-                            <Placar vencedor={foraVenceu}>{partida.gols_fora}</Placar>
+                            <NomeTime $vencedor={foraVenceu}>{partida.time2}</NomeTime>
+                            <Placar $vencedor={foraVenceu}>{partida.gols_fora}</Placar>
                         </LinhaResultado>
                     </BoxPlacar>
                 </Partida>
@@ -264,8 +265,8 @@ const Torneio = () => {
 
     const renderPartidasFinais = (partidas) =>
         partidas.map((partida) => {
-            const logoTime1 = times.find((t) => t.nome === partida.time1)?.logo || "";
-            const logoTime2 = times.find((t) => t.nome === partida.time2)?.logo || "";
+            const logoTime1 = times.find((t) => t.nome === partida.time1)?.logo || escudo;
+            const logoTime2 = times.find((t) => t.nome === partida.time2)?.logo || escudo;
 
             const golsCasa = Number(partida.gols_casa);
             const golsFora = Number(partida.gols_fora);
@@ -277,24 +278,24 @@ const Torneio = () => {
                 <PartidaFinal key={partida.id} ref={(el) => (partidaRefs.current[partida.id] = el)}>
                     <BoxPlacar>
                         <LinhaResultado
-                            vencedor={casaVenceu}
-                            hovered={timeHover === partida.time1}
+                            $vencedor={casaVenceu}
+                            $hovered={timeHover === partida.time1}
                             onMouseEnter={() => setTimeHover(partida.time1)}
                             onMouseLeave={() => setTimeHover(null)}
                         >
                             <LogoTime src={logoTime1} alt="" />
-                            <NomeTime vencedor={casaVenceu}>{partida.time1}</NomeTime>
-                            <Placar vencedor={casaVenceu}>{partida.gols_casa}</Placar>
+                            <NomeTime $vencedor={casaVenceu}>{partida.time1}</NomeTime>
+                            <Placar $vencedor={casaVenceu}>{partida.gols_casa}</Placar>
                         </LinhaResultado>
                         <LinhaResultado
-                            vencedor={foraVenceu}
-                            hovered={timeHover === partida.time2}
+                            $vencedor={foraVenceu}
+                            $hovered={timeHover === partida.time2}
                             onMouseEnter={() => setTimeHover(partida.time2)}
                             onMouseLeave={() => setTimeHover(null)}
                         >
                             <LogoTime src={logoTime2} alt="" />
-                            <NomeTime vencedor={foraVenceu}>{partida.time2}</NomeTime>
-                            <Placar vencedor={foraVenceu}>{partida.gols_fora}</Placar>
+                            <NomeTime $vencedor={foraVenceu}>{partida.time2}</NomeTime>
+                            <Placar $vencedor={foraVenceu}>{partida.gols_fora}</Placar>
                         </LinhaResultado>
                     </BoxPlacar>
                 </PartidaFinal>

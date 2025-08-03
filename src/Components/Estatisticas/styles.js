@@ -75,15 +75,15 @@ export const JogadorItem = styled.li`
     padding: 6px 0;
     border-bottom: 1px solid #2a2a2a;
 
-    ${({ destaque }) => destaque === 0 && css`
+    ${({ $destaque }) => $destaque === 0 && css`
       border-left: 4px solid gold;
       font-weight: bold;
     `}
-    ${({ destaque }) => destaque === 1 && css`
+    ${({ $destaque }) => $destaque === 1 && css`
       border-left: 4px solid silver;
       font-weight: bold;
     `}
-    ${({ destaque }) => destaque === 2 && css`
+    ${({ $destaque }) => $destaque === 2 && css`
       border-left: 4px solid bronze;
       font-weight: bold;
     `}
@@ -96,19 +96,19 @@ export const JogadorItem = styled.li`
 export const Nome = styled.span`
     color: ${({ theme }) => theme.text};
     padding-left: 0.2rem;
-    font-size: ${({ destaque }) => (destaque === 0 ? "15px" : "14px")};
-    font-weight: ${({ destaque }) => (destaque === 0 ? "600" : "normal")};
+    font-size: ${({ $destaque }) => ($destaque === 0 ? "15px" : "14px")};
+    font-weight: ${({ $destaque }) => ($destaque === 0 ? "600" : "normal")};
 `;
 
 export const Valor = styled.span`
     font-weight: bold;
     border-radius: 12px;
     padding: 2px 8px;
-    font-size: ${({ destaque }) => (destaque === 0 ? "14px" : "13px")};
+    font-size: ${({ $destaque }) => ($destaque === 0 ? "14px" : "13px")};
     color: #000;
 
-    ${({ tipo }) => {
-    switch (tipo) {
+    ${({ $tipo }) => {
+    switch ($tipo) {
       case "gols":
         return css`background-color: #fff;`;
       case "assistencias":

@@ -89,8 +89,9 @@ const AbaSumula = () => {
     const formatarGols = (gols) => {
         if (!Array.isArray(gols)) return "";
         return gols.map((g, i) => {
+            const contra = g.tipo === "contra" ? " (C)" : "";
             const assist = g.assistencia ? ` (Assist: ${g.assistencia})` : "";
-            return `${i + 1}. ${g.autor}${assist}`;
+            return `${i + 1}. ${g.autor}${assist}${contra}`;
         }).join(" | ");
     };
 
@@ -232,7 +233,7 @@ const AbaSumula = () => {
                         <option value="">Selecione a partida</option>
                         {partidasDisponiveis.map(p => (
                             <option key={p.id} value={p.id}>
-                                {`(${p.competicao}): ${p.time_casa} vs ${p.time_fora} - ${p.rodada}`}
+                                {`[${p.competicao}]: ${p.time_casa} (${p.gols_casa}) vs (${p.gols_fora}) ${p.time_fora} - ${p.rodada}`}
                             </option>
                         ))}
                     </Select>

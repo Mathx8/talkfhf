@@ -26,11 +26,11 @@ export const Navegacao = styled.div`
 `;
 
 export const BotaoRodada = styled.button`
-  background: ${({ ativo, theme }) => (ativo ? "linear-gradient(135deg, rgba(230, 57, 70, 1) 0%, rgba(236, 105, 115, 1) 25%, rgba(233, 79, 92, 1) 50%, rgba(236, 105, 115, 1) 75%), rgba(230, 57, 70, 1) 100%;" : theme.header)};
+  background: ${({ $ativo, theme }) => ($ativo ? "linear-gradient(135deg, rgba(230, 57, 70, 1) 0%, rgba(236, 105, 115, 1) 25%, rgba(233, 79, 92, 1) 50%, rgba(236, 105, 115, 1) 75%), rgba(230, 57, 70, 1) 100%;" : theme.header)};
   color: ${({ theme }) => (theme.text)};
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
-  border: 1px solid ${({ ativo, theme }) => (ativo ? theme.text2 : theme.header)};
+  border: 1px solid ${({ $ativo, theme }) => ($ativo ? theme.text2 : theme.header)};
   cursor: pointer;
   margin-right: 8px;
   transition: background 0.2s ease, color 0.2s ease;
@@ -66,8 +66,8 @@ export const Jogos = styled.div`
 export const Time = styled.span`
   flex: 1;
   text-align: center;
-  font-weight: ${({ destaque }) => destaque ? '600' : '400'};
-  color: ${({ destaque, theme }) => destaque ? "#e63946" : theme.text};
+  font-weight: ${({ $destaque }) => $destaque ? '600' : '400'};
+  color: ${({ $destaque, theme }) => $destaque ? "#e63946" : theme.text};
   font-size: 0.95rem;
 `;
 

@@ -11,7 +11,9 @@ import Loading from "../../Components/TelaCarregamento";
 import { Container, Titulo, JogadoresGrid } from "./styles";
 
 const TimeDetalhes = () => {
-    const { id } = useParams();
+    const { id: slugId } = useParams();
+    const id = slugId.split("-").pop();
+
     const [time, setTime] = useState(null);
     const [jogadores, setJogadores] = useState([]);
     const [carregando, setCarregando] = useState(true);

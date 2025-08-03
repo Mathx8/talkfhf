@@ -41,6 +41,7 @@ export const ContainerInicial = styled.div`
     user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    cursor: none;
 
     @media (max-width: 768px) {
       padding: 0 1.5rem;
@@ -106,7 +107,6 @@ export const TextoEsquerda = styled.div`
 `;
 
 export const ImagemCentral = styled.div`
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,7 +122,7 @@ export const ImagemCentral = styled.div`
 
     @media (max-width: 480px) {
       img {
-        height: 350px;
+        height: 250px;
       }
     }
 `;

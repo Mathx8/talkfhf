@@ -138,7 +138,7 @@ export const MobileMenu = styled.nav`
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    transform: ${({ aberto }) => (aberto ? "translateX(0)" : "translateX(-100%)")};
+    transform: ${({ $aberto }) => ($aberto ? "translateX(0)" : "translateX(-100%)")};
     transition: transform 0.3s ease-in-out;
     z-index: 1002;
 

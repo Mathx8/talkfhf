@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import usePartidas from "../../API/usePartidas";
-import { PontinhosAnimados } from "../TelaCarregamento/styles";
+import LoadingPequeno from "../TelaCarregamentoPequeno";
 import { RodadaContainer, Titulo, JogosContainer, Jogos, Time, Placar, Navegacao, BotaoRodada } from "./styles";
 
 const Rodadas = ({ competicao, inicialRodada }) => {
@@ -40,7 +40,7 @@ const Rodadas = ({ competicao, inicialRodada }) => {
         return () => clearInterval(intervalo);
     }, [rodadasDisponiveis]);
 
-    if (loading) return <RodadaContainer><Titulo>Carregando partidas<PontinhosAnimados>...</PontinhosAnimados></Titulo></RodadaContainer>; 
+    if (loading) return <RodadaContainer> <Titulo>Rodada</Titulo><LoadingPequeno /> </RodadaContainer>; 
     if (erro) return <p>Erro: {erro}</p>;
 
     const partidasRodada = partida.filter(j => j.rodada === rodadaAtual);
@@ -53,7 +53,7 @@ const Rodadas = ({ competicao, inicialRodada }) => {
                 {rodadasDisponiveis.map(r => (
                     <BotaoRodada
                         key={r}
-                        ativo={r === rodadaAtual}
+                        $ativo={r === rodadaAtual}
                         onClick={() => setRodadaAtual(r)}
                     >
                         {r.replace(inicialRodada, "")}
@@ -70,9 +70,9 @@ const Rodadas = ({ competicao, inicialRodada }) => {
 
                     return (
                         <Jogos key={index}>
-                            <Time destaque={destaqueCasa}>{jogo.time_casa}</Time>
+                            <Time $destaque={destaqueCasa}>{jogo.time_casa}</Time>
                             <Placar>{golsCasa} x {golsFora}</Placar>
-                            <Time destaque={destaqueFora}>{jogo.time_fora}</Time>
+                            <Time $destaque={destaqueFora}>{jogo.time_fora}</Time>
                         </Jogos>
                     );
                 })}

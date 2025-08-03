@@ -3,7 +3,7 @@ import { toPng } from "html-to-image";
 import { FaTimesCircle, FaDownload } from "react-icons/fa";
 import api from "../../API/api";
 import JogadorDetalhes from "../Jogador";
-import { PontinhosAnimados } from "../TelaCarregamento/styles";
+import LoadingPequeno from "../TelaCarregamentoPequeno";
 import { Container, TituloContainer, SearchInput, JogadorContainer, JogadorCard, Avatar, Nome, ModalOverlay, ModalContent } from "./styles";
 
 const Jogadores = () => {
@@ -92,7 +92,7 @@ const Jogadores = () => {
     );
   };
 
-  if (carregando) return <Container><h2>Carregando jogadores<PontinhosAnimados>...</PontinhosAnimados></h2></Container>;
+  if (carregando) return <> <Container><TituloContainer>Jogadores</TituloContainer><LoadingPequeno /> <Container /></Container></>;
 
   return (
     <Container>

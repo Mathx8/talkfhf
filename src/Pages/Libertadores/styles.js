@@ -28,6 +28,7 @@ export const ColunaGrupos = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 1rem;
 `;
 
 export const ColunaRodadas = styled.div`

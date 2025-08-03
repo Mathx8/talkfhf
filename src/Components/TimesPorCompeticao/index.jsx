@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 import useTimes from "../../API/useTimes";
 import Loading from "../../Components/TelaCarregamento";
 
-import {Container, CompeticaoTitulo, TimeCard, LogoTime, NomeTime, TimesGrid, CompeticaoContainer } from "./styles";
+import { Container, CompeticaoTitulo, TimeCard, LogoTime, NomeTime, TimesGrid, CompeticaoContainer } from "./styles";
+
+const formatarSlug = (nome) => nome.toLowerCase().replace(/\s+/g, "-");
 
 const TimesPorCompeticao = () => {
   const { times, loading, erro } = useTimes();
@@ -27,7 +29,7 @@ const TimesPorCompeticao = () => {
           <CompeticaoTitulo>{competicao}</CompeticaoTitulo>
           <TimesGrid>
             {times.map((time) => (
-              <TimeCard key={time.id} onClick={() => navigate(`/plantel/${time.id}`)}>
+              <TimeCard key={time.id} onClick={() => navigate(`/plantel/${formatarSlug(time.nome)}-${time.id}`)}>
                 <LogoTime src={time.logo} alt={time.nome} />
                 <NomeTime>{time.nome}</NomeTime>
               </TimeCard>

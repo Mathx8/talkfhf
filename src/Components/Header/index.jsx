@@ -53,7 +53,7 @@ const Header = () => {
 
             </HeaderContainer>
 
-            <MobileMenu aberto={aberto}>
+            <MobileMenu $aberto={aberto}>
                 {/*<span style={{ fontWeight: "bold", color: "#fff" }}><img src={competicoes} alt="" />COMPETIÇÕES</span>*/}
                 <Link to="/libertadores" onClick={closeMenu}><img src={liberta} alt="" />LIBERTADORES</Link>
                 <Link to="/draft-cup" onClick={closeMenu}><img src={draft} alt="" />DRAFT CUP</Link>

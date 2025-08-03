@@ -196,9 +196,9 @@ export const Card = styled.div`
     }
 
     @media (max-width: 480px) {
-        width: 40px;
-        height: 50px;
-        background-size: 40px 50px;
+        width: 38px;
+        height: 48px;
+        background-size: 38px 48px;
         padding: 0px 4px;
     }
 `;

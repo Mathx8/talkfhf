@@ -151,8 +151,8 @@ export const BoxPlacar = styled.div`
 export const LinhaResultado = styled.div`
   display: flex;
   align-items: center;
-  background-color: ${({ hovered, theme }) =>
-    hovered ? "#F08890" : theme.text2};
+  background-color: ${({ $hovered, theme }) =>
+    $hovered ? "#F08890" : theme.text2};
   transition: background-color 0.2s ease;
 `;
 
@@ -178,7 +178,7 @@ export const Placar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${({ vencedor, theme }) => (vencedor ? "#e63946" : theme.text)};
+  color: ${({ $vencedor, theme }) => ($vencedor ? "#e63946" : theme.text)};
   font-weight: bold;
   font-size: 0.95rem;
   padding: 0.2rem 0.6rem;
