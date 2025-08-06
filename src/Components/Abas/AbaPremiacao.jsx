@@ -32,6 +32,9 @@ const AbaPremiacao = () => {
     const { times } = useTimes();
     const { jogadores } = useJogadores();
 
+    const competicoesComPremiacao = premiacao.map(p => p.competicao);
+    const competicoesDisponiveis = competicoes.filter(c => !competicoesComPremiacao.includes(c.id));
+
     const [loadingCriar, setLoadingCriar] = useState(false);
     const [loadingSalvar, setLoadingSalvar] = useState(false);
 
@@ -277,7 +280,7 @@ const AbaPremiacao = () => {
                         required
                     >
                         <option value="">Selecione a competição</option>
-                        {competicoes.map((comp) => (
+                        {competicoesDisponiveis.map((comp) => (
                             <option key={comp.id} value={comp.id}>
                                 {comp.nome}
                             </option>

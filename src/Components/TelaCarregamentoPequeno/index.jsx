@@ -1,11 +1,10 @@
 import React from "react";
-import { CarregamentoContainer, Giro, Mensagem, PontinhosAnimados } from "./styles";
+import { CarregamentoContainer, Mensagem, PontinhosAnimados } from "./styles";
 
 const LoadingPequeno = () => {
 
     return (
         <CarregamentoContainer>
-            <Giro />
             <Mensagem>
                 Carregando
                 <PontinhosAnimados>

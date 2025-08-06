@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { ContainerChave, Partida, PartidaFinal, BoxPlacar, LinhaResultado, LogoTime, NomeTime, Placar, Coluna, Coluna2, TituloSecao, ContainerUpperAndLower, ScrollContainer, RotuloVertical, NomeRodada, RodadasHeader, DragArea } from "./styles";
 import usePartidas from "../../API/usePartidas";
 import useTimes from "../../API/useTimes"
@@ -11,7 +11,6 @@ const Torneio = () => {
     const { partida, loading, erro } = usePartidas();
     const partidaRefs = useRef({});
     const containerRef = useRef();
-    const [timeHover, setTimeHover] = useState(null);
     const { isDark } = useTheme();
     const dragAreaRef = useRef();
 
@@ -240,19 +239,13 @@ const Torneio = () => {
                     <BoxPlacar>
                         <LinhaResultado
                             $vencedor={casaVenceu}
-                            $hovered={timeHover === partida.time1}
-                            onMouseEnter={() => setTimeHover(partida.time1)}
-                            onMouseLeave={() => setTimeHover(null)}
                         >
                             <LogoTime src={logoTime1} alt="" />
                             <NomeTime $vencedor={casaVenceu}>{partida.time1}</NomeTime>
                             <Placar $vencedor={casaVenceu}>{partida.gols_casa}</Placar>
                         </LinhaResultado>
                         <LinhaResultado
-                            $encedor={foraVenceu}
-                            $hovered={timeHover === partida.time2}
-                            onMouseEnter={() => setTimeHover(partida.time2)}
-                            onMouseLeave={() => setTimeHover(null)}
+                            $vencedor={foraVenceu}
                         >
                             <LogoTime src={logoTime2} alt="" />
                             <NomeTime $vencedor={foraVenceu}>{partida.time2}</NomeTime>
@@ -279,9 +272,6 @@ const Torneio = () => {
                     <BoxPlacar>
                         <LinhaResultado
                             $vencedor={casaVenceu}
-                            $hovered={timeHover === partida.time1}
-                            onMouseEnter={() => setTimeHover(partida.time1)}
-                            onMouseLeave={() => setTimeHover(null)}
                         >
                             <LogoTime src={logoTime1} alt="" />
                             <NomeTime $vencedor={casaVenceu}>{partida.time1}</NomeTime>
@@ -289,9 +279,6 @@ const Torneio = () => {
                         </LinhaResultado>
                         <LinhaResultado
                             $vencedor={foraVenceu}
-                            $hovered={timeHover === partida.time2}
-                            onMouseEnter={() => setTimeHover(partida.time2)}
-                            onMouseLeave={() => setTimeHover(null)}
                         >
                             <LogoTime src={logoTime2} alt="" />
                             <NomeTime $vencedor={foraVenceu}>{partida.time2}</NomeTime>

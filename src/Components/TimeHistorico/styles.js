@@ -20,14 +20,15 @@ export const EstatisticasGrid = styled.div`
 `;
 
 export const EstatCard = styled.div`
-    background: ${({ theme }) => theme.header};
-    color: ${({ theme }) => theme.text};
-    border-radius: 8px;
-    padding: 16px;
-    width: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 16px;
+    width: 120px;
+    background: ${({ theme }) => theme.header};
+    color: ${({ theme }) => theme.text};
+    border-radius: 8px;
+    box-shadow: 0 0 8px ${({ theme }) => theme.shadow};
 `;
 
 export const Valor = styled.div`
@@ -60,13 +61,14 @@ export const PartidasLista = styled.div`
 `;
 
 export const PartidaItem = styled.div`
+    display: flex;
+    flex-direction: column;
     background: ${({ theme }) => theme.header};
     border-radius: 8px;
     padding: 12px 16px;
     color: ${({ theme }) => theme.text};
-    display: flex;
-    flex-direction: column;
     gap: 4px;
+    box-shadow: 0 0 8px ${({ theme }) => theme.shadow};
 `;
 
 export const InfoSuperior = styled.div`

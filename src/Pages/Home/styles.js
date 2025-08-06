@@ -90,6 +90,7 @@ export const TextoEsquerda = styled.div`
   h3 {
     margin: 0;
     text-align: left;
+    cursor: none;
   }
 
   @media (max-width: 768px) {

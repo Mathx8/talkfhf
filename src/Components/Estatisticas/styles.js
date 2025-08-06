@@ -49,9 +49,9 @@ export const Titulo = styled.h3`
     justify-content: flex-start;
     color: ${({ theme }) => theme.text};
     font-size: 18px;
-    margin-bottom: 12px;
-    border-bottom: 1px solid #000;
-    padding-bottom: 6px;
+    border-bottom: 1px solid ${({ theme }) => theme.text};
+    margin: 0.6rem 0;
+    padding-bottom: 0.2rem;
 
     img {
       width: 24px;
@@ -72,8 +72,11 @@ export const JogadorItem = styled.li`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6px 0;
-    border-bottom: 1px solid #2a2a2a;
+    background: #f800002c;
+    border-radius: 16px 0 0 16px;
+    border-left: 4px solid transparent;
+    padding: 6px 3px;
+    margin-bottom: 0.3rem;
 
     ${({ $destaque }) => $destaque === 0 && css`
       border-left: 4px solid gold;
@@ -84,7 +87,7 @@ export const JogadorItem = styled.li`
       font-weight: bold;
     `}
     ${({ $destaque }) => $destaque === 2 && css`
-      border-left: 4px solid bronze;
+      border-left: 4px solid #CD7F32;
       font-weight: bold;
     `}
 
@@ -96,8 +99,8 @@ export const JogadorItem = styled.li`
 export const Nome = styled.span`
     color: ${({ theme }) => theme.text};
     padding-left: 0.2rem;
-    font-size: ${({ $destaque }) => ($destaque === 0 ? "15px" : "14px")};
-    font-weight: ${({ $destaque }) => ($destaque === 0 ? "600" : "normal")};
+    font-size: ${({ $destaque }) => ($destaque === 0 || $destaque === 1 || $destaque === 2 ? "15px" : "14px")};
+    font-weight: ${({ $destaque }) => ($destaque === 0 || $destaque === 1 || $destaque === 2 ? "600" : "normal")};
 `;
 
 export const Valor = styled.span`

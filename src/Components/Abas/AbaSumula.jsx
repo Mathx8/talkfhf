@@ -87,9 +87,9 @@ const AbaSumula = () => {
     };
 
     const formatarGols = (gols) => {
-        if (!Array.isArray(gols)) return "";
+        if (!Array.isArray(gols) || gols.length === 0) return "Sem Gols";
         return gols.map((g, i) => {
-            const contra = g.tipo === "contra" ? " (C)" : "";
+            const contra = g.tipo === "contra" ? " (Contra)" : "";
             const assist = g.assistencia ? ` (Assist: ${g.assistencia})` : "";
             return `${i + 1}. ${g.autor}${assist}${contra}`;
         }).join(" | ");
@@ -97,7 +97,7 @@ const AbaSumula = () => {
 
     const formatarCleansheets = (lista) => {
         if (!Array.isArray(lista) || lista.length === 0) return "Nenhum";
-        return lista.map(id => jogadores.find(j => j.id === id)?.nome || "?").join(" | ");
+        return lista.map(item => item.jogador || "?").join(" | ");
     };
 
     const formatarCartoes = (cartoes) => {
@@ -143,8 +143,8 @@ const AbaSumula = () => {
             };
         });
 
-        const cleansheets = sumula.cleansheets.map(nome => {
-            const jogador = jogadores.find(j => j.nome === nome);
+        const cleansheets = sumula.cleansheets.map(item => {
+            const jogador = jogadores.find(j => j.nome === item.jogador);
             return jogador?.id || 0;
         });
 

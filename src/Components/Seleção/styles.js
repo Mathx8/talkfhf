@@ -297,12 +297,12 @@ export const Avatar = styled.img`
 `;
 
 export const Nome = styled.div`
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: #e63946;
     width: 100%;
     text-align: center;
-    margin-bottom: 6px;
+    margin-bottom: 5%;
 
     @media (max-width: 480px) {
         margin-bottom: 6px;

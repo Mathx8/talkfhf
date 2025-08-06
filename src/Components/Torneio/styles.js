@@ -144,7 +144,6 @@ export const BoxPlacar = styled.div`
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
-  border: 1px solid ${({ theme }) => theme.text2};
   gap: 0.1rem;
 `;
 

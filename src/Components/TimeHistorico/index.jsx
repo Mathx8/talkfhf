@@ -22,7 +22,9 @@ const TimeHistorico = ({ timeId, nomeTime }) => {
     const calcularHistorico = async () => {
       try {
         const resp = await api.get("/partida/view");
-        const partidas = resp.data;
+        const partidas = resp.data.sort((a, b) =>
+          a.rodada.localeCompare(b.rodada)
+        );
 
         const jogosDoTime = partidas.filter(
           (p) => p.time_casa === nomeTime || p.time_fora === nomeTime

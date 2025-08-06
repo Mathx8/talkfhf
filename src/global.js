@@ -8,6 +8,11 @@ export default createGlobalStyle`
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
     transition: background 0.3s, color 0.3s;
+    cursor: default;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, span, li, label {
+    cursor: default;
   }
 
   h1 {

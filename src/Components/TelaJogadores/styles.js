@@ -114,6 +114,10 @@ export const ModalContent = styled.div`
     position: relative;
     animation: fadeInScale 0.25s ease-out;
 
+    @media (max-width: 480px) {
+      padding: 24px 0px;
+    }
+
     @keyframes fadeInScale {
       from {
         opacity: 0;

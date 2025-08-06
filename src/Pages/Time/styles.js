@@ -8,6 +8,7 @@ export const Container = styled.div`
 export const Titulo = styled.h1`
     display: flex;
     align-items: center;
+    color: ${({ theme }) => theme.text};
     border-bottom: 1px solid #444;
     gap: 1rem;
     font-size: 28px;
@@ -33,6 +34,7 @@ export const Card = styled.div`
     flex-direction: column;
     align-items: center;
     background-color: ${({ theme }) => theme.header};
+    box-shadow: 0 0 8px ${({ theme }) => theme.shadow};
     border-radius: 12px;
     padding: 16px;
     position: relative;
@@ -65,8 +67,9 @@ export const Badge = styled.div`
     position: absolute;
     top: 20px;
     right: 20px;
-    background: linear-gradient(135deg,rgba(230, 57, 70, 1) 0%, rgba(236, 105, 115, 1) 40%, rgba(236, 105, 115, 1) 60%, rgba(230, 57, 70, 1) 100%);
-    color: ${({ theme }) => theme.text};
+    background: transparent;
+    border: 1px solid #f9597b;
+    color: #f9597b;
     font-weight: bold;
     padding: 6px 10px;
     border-radius: 8px;
